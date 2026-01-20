@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Busia Secondary School</title>
+<style>
+/* ----------- GLOBAL ----------- */
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial,sans-serif; }
+body { background:#f9f9f9; }
+
+h1,h2 { margin-bottom: 15px; }
+p { margin-bottom: 20px; color:#555; }
+button { cursor:pointer; }
+
+/* ----------- HEADER ----------- */
+.page-header { background:#1e88e5; color:white; text-align:center; padding:60px 20px; }
+.page-header h1 { font-size:2.5rem; }
+.page-header p { font-size:1.1rem; }
+
+/* ----------- SERVICES ----------- */
+#services { display:flex; max-width:1100px; margin:60px auto; border-radius:14px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
+.service { flex:1; padding:40px; opacity:0; transform:translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.service.show { opacity:1; transform:translateY(0); }
+.left { background:white; color:black; border-right:2px solid #e0e0e0; }
+.right { background:#111; color:white; }
+.service h2 { border-left:5px solid #1e88e5; padding-left:12px; margin-bottom:20px; }
+.service ul { list-style:none; }
+.service li { margin-bottom:12px; line-height:1.6; }
+.service-btn { margin-top:25px; padding:12px 22px; border:none; border-radius:6px; font-weight:bold; }
+.left .service-btn { background:#1e88e5; color:white; }
+.right .service-btn { background:white; color:black; }
+
+/* ----------- EXTRA SERVICES ----------- */
+.extra-services { padding:60px 20px; text-align:center; background:#f5f5f5; }
+.cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:20px; max-width:900px; margin:auto; }
+.card { background:white; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); font-size:1.1rem; }
+
+/* ----------- CALENDAR ----------- */
+.calendar-section { padding:60px 20px; text-align:center; opacity:0; transform:translateY(40px); transition:opacity 0.8s ease, transform 0.8s ease; }
+.calendar-section.show { opacity:1; transform:translateY(0); }
+.calendar { max-width:700px; margin:auto; background:white; border-radius:12px; padding:20px; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
+.month { position:relative; margin:30px 0 10px; font-weight:bold; font-size:1.2rem; color:#1e88e5; }
+.month-nav { position:absolute; top:50%; transform:translateY(-50%); background:#1e88e5; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; font-size:1rem; }
+.month-nav.prev { left:0; } .month-nav.next { right:0; }
+.month-nav:hover { background:#1565c0; }
+.weekdays,.days { display:grid; grid-template-columns: repeat(7,1fr); text-align:center; }
+.weekdays div { font-weight:bold; padding:10px 0; border-bottom:1px solid #ddd; }
+.days .day { padding:15px 0; border-bottom:1px solid #eee; position:relative; }
+.days .day.event { opacity:0; transform:translateY(20px); transition:opacity 0.5s ease, transform 0.5s ease; background:#1e88e5; color:white; border-radius:6px; cursor:pointer; }
+.days .day.event.show { opacity:1; transform:translateY(0); }
+.days .day.event:hover { transform:translateY(-3px); }
+.event-name { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:#333; color:white; font-size:0.8rem; padding:3px 6px; border-radius:4px; white-space:nowrap; }
+.days .day.event:hover .event-name { display:block; }
+
+/* ----------- EVENT POPUP ----------- */
+.event-popup { display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; color:black; padding:25px 30px; border-radius:10px; box-shadow:0 8px 25px rgba(0,0,0,0.2); z-index:1000; max-width:300px; text-align:center; }
+.event-popup .close-btn { position:absolute; top:8px; right:12px; font-size:1.5rem; cursor:pointer; }
+
+/* ----------- FOOTER ----------- */
+.footer { background:#111; color:white; text-align:center; padding:20px; margin-top:60px; }
+
+/* ----------- MOBILE ----------- */
+@media(max-width:768px){
+  #services{ flex-direction:column; }
+  .left{ border-right:none; border-bottom:2px solid #e0e0e0; }
+  .weekdays, .days{ font-size:0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <h1>Our Services</h1>
+  <p>Supporting academic excellence and student wellbeing</p>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="service left">
+    <h2>Academic Services</h2>
+    <ul>
+      <li>📚 Library Access</li>
+      <li>💻 Online Lessons for International Students</li>
+      <li>👨🏫 Academic Counselling</li>
+      <li>⏰ After School Tutoring</li>
+    </ul>
+    <button class="service-btn">Learn More</button>
+  </div>
+  <div class="service right">
+    <h2>Student Support</h2>
+    <ul>
+      <li>🏥 Health and Wellness Center</li>
+      <li>🎓 Career Guidance</li>
+      <li>⚽ Clubs and Activities</li>
+      <li>🚌 Transportation Services</li>
+    </ul>
+    <button class="service-btn">Learn More</button>
+  </div>
+</section>
+
+<!-- EXTRA SERVICES -->
+<section class="extra-services">
+  <h2>Additional Support</h2>
+  <div class="cards">
+    <div class="card">📖 Study Skills Workshops</div>
+    <div class="card">🧠 Guidance & Mentorship</div>
+    <div class="card">🌍 Community Outreach</div>
+    <div class="card">🏆 Sports Development</div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section class="calendar-section">
+  <h2>School Calendar</h2>
+  <p>Click a date to see event details</p>
+  <div class="calendar">
+
+    <!-- JANUARY -->
+    <div class="month">
+      <button class="month-nav prev">&lt;</button>
+      <span class="month-name">January 2026</span>
+      <button class="month-nav next">&gt;</button>
+    </div>
+    <div class="weekdays"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+    <div class="days">
+      <div class="day">1</div>
+      <div class="day event" data-event="PTA Meeting at 10 AM">5</div>
+      <div class="day event" data-event="Math Exam in Room 12">10</div>
+      <div class="day event" data-event="School Assembly at 8 AM">15</div>
+      <div class="day event" data-event="Science Fair in Hall">20</div>
+      <div class="day event" data-event="English Exam in Room 14">25</div>
+    </div>
+
+    <!-- FEBRUARY -->
+    <div class="month">
+      <button class="month-nav prev">&lt;</button>
+      <span class="month-name">February 2026</span>
+      <button class="month-nav next">&gt;</button>
+    </div>
+    <div class="weekdays"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+    <div class="days">
+      <div class="day event" data-event="Mid-term Exams Start">5</div>
+      <div class="day event" data-event="Sports Day">10</div>
+      <div class="day event" data-event="Parent-Teacher Meeting">15</div>
+      <div class="day event" data-event="History Exam">20</div>
+      <div class="day event" data-event="Art Workshop">25</div>
+    </div>
+
+    <!-- MARCH -->
+    <div class="month">
+      <button class="month-nav prev">&lt;</button>
+      <span class="month-name">March 2026</span>
+      <button class="month-nav next">&gt;</button>
+    </div>
+    <div class="weekdays"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+    <div class="days">
+      <div class="day event" data-event="Quarter Exams">3</div>
+      <div class="day event" data-event="Science Project Submission">7</div>
+      <div class="day event" data-event="Math Quiz">12</div>
+      <div class="day event" data-event="Drama Performance">15</div>
+      <div class="day event" data-event="End of Term Celebration">20</div>
+      <div class="day event" data-event="Geography Exam">27</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- POPUP -->
+<div class="event-popup" id="eventPopup">
+  <span class="close-btn" id="closePopup">&times;</span>
+  <p id="popupText"></p>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Busia Secondary School | All Rights Reserved</p>
+</footer>
+
+<!-- JS -->
+<script>
+// Scroll animation
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }
+  });
+},{threshold:0.3});
+
+document.querySelectorAll('.service').forEach(s=>observer.observe(s));
+const calendarSection=document.querySelector('.calendar-section');
+if(calendarSection) observer.observe(calendarSection);
+const eventDays=document.querySelectorAll('.days .day.event');
+eventDays.forEach((day,i)=>{ day.style.transitionDelay=`${i*0.1}s`; observer.observe(day); });
+
+// Popup
+const popup=document.getElementById('eventPopup');
+const popupText=document.getElementById('popupText');
+const closeBtn=document.getElementById('closePopup');
+eventDays.forEach(day=>day.addEventListener('click',()=>{ popupText.innerHTML='📅 <strong>'+day.dataset.event+'</strong>'; popup.style.display='block'; }));
+closeBtn.addEventListener('click',()=>{ popup.style.display='none'; });
+window.addEventListener('click', e=>{ if(e.target===popup) popup.style.display='none'; });
+
+// Month navigation
+const months=document.querySelectorAll('.calendar .month');
+const monthSections=document.querySelectorAll('.calendar .month, .calendar .weekdays, .calendar .days');
+let currentMonthIndex=0;
+function showMonth(index){
+  monthSections.forEach((el,i)=>{
+    if(i>=index*3 && i<index*3+3) el.style.display=(i%3===0?'grid':'grid');
+    else el.style.display='none';
+  });
+}
+showMonth(currentMonthIndex);
+months.forEach((month,i)=>{
+  const prev=month.querySelector('.prev'); const next=month.querySelector('.next');
+  if(prev) prev.addEventListener('click',()=>{ if(currentMonthIndex>0){ currentMonthIndex--; showMonth(currentMonthIndex); }});
+  if(next) next.addEventListener('click',()=>{ if(currentMonthIndex<months.length-1){ currentMonthIndex++; showMonth(currentMonthIndex); }});
+});
+
+// Highlight today
+const today=new Date();
+const todayDay=today.getDate();
+const todayMonth=today.getMonth();
+const todayYear=today.getFullYear();
+document.querySelectorAll('.calendar .month-name').forEach((mn,i)=>{
+  if(mn.textContent.includes(todayYear) && i===todayMonth){
+    const daysDiv=mn.nextElementSibling.nextElementSibling;
+    daysDiv.querySelectorAll('.day').forEach(d=>{ if(parseInt(d.textContent)===todayDay){ d.style.background='#ff9800'; d.style.color='white'; d.style.fontWeight='bold'; d.title='Today'; } });
+  }
+});
+</script>
+</body>
+</html>

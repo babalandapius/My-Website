@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Busia Secondary School</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="services.css">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="sections.css">
+<link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+      <div class="sub-nav">
+        <aside style="display: flex; align-items: center; justify-content: left;">
+        <h1>Busia Secondary School</h1>
+        </aside>
+      </div>
+      <nav id="main-nav">
+          <button class="menu-toggle">&#9776;</button> <!-- hamburger icon-->
+        <ul>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="calender.html">Calender</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <marquee behavior="scroll" direction="left" style="color: rgb(23, 85, 255); font-weight: 900; font-size: 20px; margin: 10px;">BUSIA SENIOR SECONDARY SCHOOL</marquee>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="service left">
+    <h2>Academic Services</h2>
+    <ul>
+      <li>📚 Library Access</li>
+      <li>💻 Online Lessons</li>
+      <li>👨🏫 Academic Counselling</li>
+      <li>⏰ After School Tutoring</li>
+    </ul>
+    <button class="service-btn" onclick="openAdmissionPopup()">Apply Now</button>
+  </div>
+  <div class="service right">
+    <h2>Student Support</h2>
+    <ul>
+      <li>🏥 Health and Wellness Center</li>
+      <li>🎓 Career Guidance</li>
+      <li>⚽ Clubs and Activities</li>
+      <li>🚌 Transportation Services</li>
+    </ul>
+    <button class="service-btn" onclick="openAdmissionPopup()">Apply Now</button>
+  </div>
+</section>
+
+<!-- EXTRA SERVICES -->
+<section class="extra-services">
+  <h2>Additional Support</h2>
+  <div class="cards">
+    <div class="card">📖 Study Skills Workshops</div>
+    <div class="card">🧠 Guidance & Mentorship</div>
+    <div class="card">🌍 Community Outreach</div>
+    <div class="card">🏆 Sports Development</div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section class="calendar-section">
+  <h2>School Calendar</h2>
+  <p>Click a date to see event details</p>
+  <div class="calendar">
+    <!-- JANUARY -->
+    <div class="month">
+      <button class="month-nav prev">&lt;</button>
+      <span class="month-name">January 2026</span>
+      <button class="month-nav next">&gt;</button>
+    </div>
+    <div class="weekdays"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+    <div class="days">
+      <div class="day">1</div>
+      <div class="day event" data-event="PTA Meeting at 10 AM">5</div>
+      <div class="day event" data-event="Math Exam in Room 12">10</div>
+      <div class="day event" data-event="School Assembly at 8 AM">15</div>
+      <div class="day event" data-event="Science Fair in Hall">20</div>
+      <div class="day event" data-event="English Exam in Room 14">25</div>
+    </div>
+
+    <!-- FEBRUARY -->
+    <div class="month">
+      <button class="month-nav prev">&lt;</button>
+      <span class="month-name">February 2026</span>
+      <button class="month-nav next">&gt;</button>
+    </div>
+    <div class="weekdays"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+    <div class="days">
+      <div class="day event" data-event="Mid-term Exams Start">5</div>
+      <div class="day event" data-event="Sports Day">10</div>
+      <div class="day event" data-event="Parent-Teacher Meeting">15</div>
+      <div class="day event" data-event="History Exam">20</div>
+      <div class="day event" data-event="Art Workshop">25</div>
+    </div>
+
+    <!-- MARCH -->
+    <div class="month">
+      <button class="month-nav prev">&lt;</button>
+      <span class="month-name">March 2026</span>
+      <button class="month-nav next">&gt;</button>
+    </div>
+    <div class="weekdays"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div>
+    <div class="days">
+      <div class="day event" data-event="Quarter Exams">3</div>
+      <div class="day event" data-event="Science Project Submission">7</div>
+      <div class="day event" data-event="Math Quiz">12</div>
+      <div class="day event" data-event="Drama Performance">15</div>
+      <div class="day event" data-event="End of Term Celebration">20</div>
+      <div class="day event" data-event="Geography Exam">27</div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT POPUP -->
+<div class="event-popup" id="eventPopup">
+  <span class="close-btn" id="closePopup">&times;</span>
+  <p id="popupText"></p>
+</div>
+
+<!-- ADMISSION FORM POPUP -->
+<div class="admission-popup" id="admissionPopup">
+  <span class="close-btn" id="closeAdmission">&times;</span>
+  <h2>Apply for Admission</h2>
+  <form id="popupAdmissionForm">
+    <label for="pname">Full Name *</label>
+    <input type="text" id="pname" required>
+    <label for="pemail">Email *</label>
+    <input type="email" id="pemail" required>
+    <label for="pphone">Phone *</label>
+    <input type="tel" id="pphone" required pattern="[0-9]{10,15}" placeholder="e.g., 0712345678">
+    <label for="pgender">Gender *</label>
+    <select id="pgender" required>
+      <option value="">Select</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+    <button type="submit">Submit Application</button>
+    <p id="popupFeedback"></p>
+  </form>
+</div>
+
+<!-- FOOTER -->
+    <footer>
+      <p>&copy; 2026 Busia Senior secondary School. All rights are reserved.</p>
+      <p>Find Us on <a href="mailto: babalandapius3@gmail.com?" subject="Hello">ssb@gmail.ac.ug</a></p>
+      <small>P.O.Box 001,</small>
+      <small>Busia, Uganda</small>
+
+      <nav id="footer-links">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="admissions.html">Admissions</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="calender.html">Calender</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="tel: +256765990686">Call Us</a>
+    </footer>
+
+    <button id="scrollTopBtn">↑ Top</button>
+    <div id="profileModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption">An Administrator</div>
+    </div>
+<script>
+
+
+const menuToggle = document.querySelector("#main-nav .menu-toggle");
+const navLinks = document.querySelector("#main-nav ul");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+  // Scroll animation
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }
+  });
+},{threshold:0.3});
+
+document.querySelectorAll('.service').forEach(s=>observer.observe(s));
+const calendarSection=document.querySelector('.calendar-section');
+if(calendarSection) observer.observe(calendarSection);
+const eventDays=document.querySelectorAll('.days .day.event');
+eventDays.forEach((day,i)=>{ day.style.transitionDelay=`${i*0.1}s`; observer.observe(day); });
+
+// Event popup
+const popup = document.getElementById('eventPopup');
+const popupText=document.getElementById('popupText');
+const closeBtn=document.getElementById('closePopup');
+eventDays.forEach(day=>day.addEventListener('click',()=>{ popupText.innerHTML='📅 <strong>'+day.dataset.event+'</strong>'; popup.style.display='block'; }));
+closeBtn.addEventListener('click',()=>{ popup.style.display='none'; });
+window.addEventListener('click', e=>{ if(e.target===popup) popup.style.display='none'; });
+
+// Month navigation
+const months=document.querySelectorAll('.calendar .month');
+const monthSections=document.querySelectorAll('.calendar .month, .calendar .weekdays, .calendar .days');
+let currentMonthIndex=0;
+function showMonth(index){
+  monthSections.forEach((el,i)=>{
+    if(i>=index*3 && i<index*3+3) el.style.display=(i%3===0?'grid':'grid');
+    else el.style.display='none';
+  });
+}
+showMonth(currentMonthIndex);
+months.forEach((month,i)=>{
+  const prev=month.querySelector('.prev'); const next=month.querySelector('.next');
+  if(prev) prev.addEventListener('click',()=>{ if(currentMonthIndex>0){ currentMonthIndex--; showMonth(currentMonthIndex); }});
+  if(next) next.addEventListener('click',()=>{ if(currentMonthIndex<months.length-1){ currentMonthIndex++; showMonth(currentMonthIndex); }});
+});
+
+// Highlight today
+const today=new Date();
+const todayDay=today.getDate();
+const todayMonth=today.getMonth();
+const todayYear=today.getFullYear();
+document.querySelectorAll('.calendar .month-name').forEach((mn,i)=>{
+  if(mn.textContent.includes(todayYear) && i===todayMonth){
+    const daysDiv=mn.nextElementSibling.nextElementSibling;
+    daysDiv.querySelectorAll('.day').forEach(d=>{ if(parseInt(d.textContent)===todayDay){ d.style.background='#ff9800'; d.style.color='white'; d.style.fontWeight='bold'; d.title='Today'; } });
+  }
+});
+
+// Admissions popup
+function openAdmissionPopup(){ document.getElementById('admissionPopup').style.display='block'; }
+document.getElementById('closeAdmission').addEventListener('click', ()=>{ document.getElementById('admissionPopup').style.display='none'; });
+window.addEventListener('click', e=>{ if(e.target===document.getElementById('admissionPopup')) document.getElementById('admissionPopup').style.display='none'; });
+
+// Popup form submission
+const popupForm=document.getElementById('popupAdmissionForm');
+const popupFeedback=document.getElementById('popupFeedback');
+popupForm.addEventListener('submit', e=>{
+  e.preventDefault();
+  const name=document.getElementById('pname').value.trim();
+  const email=document.getElementById('pemail').value.trim();
+  const phone=document.getElementById('pphone').value.trim();
+  const gender=document.getElementById('pgender').value;
+  if(!name || !email || !phone || !gender){ popupFeedback.style.color='red'; popupFeedback.textContent="Please fill all fields!"; return; }
+  const phonePattern=/^[0-9]{10,15}$/;
+  if(!phonePattern.test(phone)){ popupFeedback.style.color='red'; popupFeedback.textContent="Invalid phone!"; return; }
+  popupFeedback.style.color='green';
+  popupFeedback.textContent=`Thank you ${name}! Your application has been submitted.`;
+  popupForm.reset();
+});
+</script>
+</body>
+</html>

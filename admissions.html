@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions | Busia Secondary School</title>
+<style>
+/* --------- GLOBAL --------- */
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; }
+body { background:#f9f9f9; color:#333; }
+h1,h2 { margin-bottom:15px; }
+p { margin-bottom:20px; color:#555; }
+
+/* --------- HEADER --------- */
+.page-header { background:#1e88e5; color:white; text-align:center; padding:60px 20px; }
+.page-header h1 { font-size:2.5rem; }
+.page-header p { font-size:1.1rem; }
+
+/* --------- ADMISSION INFO --------- */
+.admission-info { max-width:900px; margin:40px auto; padding:20px; background:white; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
+.admission-info ul { list-style:disc inside; margin-bottom:20px; }
+
+/* --------- FORM --------- */
+.admission-form { max-width:600px; margin:40px auto; padding:20px; background:white; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.1); }
+.admission-form label { display:block; margin-bottom:5px; font-weight:bold; }
+.admission-form input, .admission-form select, .admission-form textarea { width:100%; padding:10px; margin-bottom:15px; border-radius:6px; border:1px solid #ccc; }
+.admission-form textarea { resize:vertical; }
+.admission-form button { background:#1e88e5; color:white; padding:12px 22px; border:none; border-radius:6px; font-weight:bold; cursor:pointer; }
+.admission-form button:hover { background:#1565c0; }
+
+/* --------- FEEDBACK MESSAGE --------- */
+#feedback { margin-top:15px; font-weight:bold; color:green; }
+
+/* --------- FOOTER --------- */
+.footer { background:#111; color:white; text-align:center; padding:20px; margin-top:40px; }
+
+/* --------- MOBILE --------- */
+@media(max-width:768px){
+  .admission-form, .admission-info { padding:15px; margin:20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <h1>Admissions</h1>
+  <p>Join Busia Secondary School – Excellence in Academics and Character</p>
+</header>
+
+<!-- ADMISSION INFO -->
+<section class="admission-info">
+  <h2>Admission Requirements</h2>
+  <ul>
+    <li>Completed primary school certificate or equivalent</li>
+    <li>Copy of birth certificate</li>
+    <li>Passport size photograph</li>
+    <li>Academic transcripts (last 2 years)</li>
+    <li>Recommendation letters (optional but preferred)</li>
+  </ul>
+
+  <h2>Admission Process</h2>
+  <ul>
+    <li>Fill out the online application form below</li>
+    <li>Submit required documents</li>
+    <li>Attend entrance examination (dates communicated via email)</li>
+    <li>Receive admission decision via email</li>
+    <li>Complete fee payment and registration</li>
+  </ul>
+</section>
+
+<!-- ADMISSION FORM -->
+<section class="admission-form">
+  <h2>Apply Online</h2>
+  <form id="admissionForm">
+    <label for="fullname">Full Name *</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number *</label>
+    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,15}" placeholder="e.g., 0712345678">
+
+    <label for="gender">Gender *</label>
+    <select id="gender" name="gender" required>
+      <option value="">Select</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+
+    <label for="dob">Date of Birth *</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="address">Residential Address *</label>
+    <textarea id="address" name="address" rows="3" required></textarea>
+
+    <label for="program">Program Applying For *</label>
+    <select id="program" name="program" required>
+      <option value="">Select Program</option>
+      <option>Science</option>
+      <option>Arts</option>
+      <option>Sports</option>
+      <option>Mixed / Other</option>
+    </select>
+
+    <button type="submit">Submit Application</button>
+    <p id="feedback"></p>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Busia Secondary School | All Rights Reserved</p>
+</footer>
+
+<!-- JS -->
+<script>
+// Form submission logic
+const form = document.getElementById('admissionForm');
+const feedback = document.getElementById('feedback');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault(); // prevent page reload
+
+  // Validate inputs (basic HTML validation is already present)
+  const fullname = document.getElementById('fullname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const gender = document.getElementById('gender').value;
+  const dob = document.getElementById('dob').value;
+  const address = document.getElementById('address').value.trim();
+  const program = document.getElementById('program').value;
+
+  if(!fullname || !email || !phone || !gender || !dob || !address || !program){
+    feedback.style.color = 'red';
+    feedback.textContent = "Please fill all required fields!";
+    return;
+  }
+
+  // Check phone pattern
+  const phonePattern = /^[0-9]{10,15}$/;
+  if(!phonePattern.test(phone)){
+    feedback.style.color='red';
+    feedback.textContent = "Please enter a valid phone number!";
+    return;
+  }
+
+  // Simulate submission success
+  feedback.style.color='green';
+  feedback.textContent = `Thank you ${fullname}! Your application has been submitted successfully.`;
+
+  // Clear form fields
+  form.reset();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 500x;
+  z-index: 10000;
+  background-color: #0057b7;
+  color: white;
+  padding: 1em;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#main-nav ul {
+  list-style: none;
+  padding: 0;
+}
+#main-nav ul li {
+  display: inline;
+  margin: 0 1em;
+}
+#main-nav .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #main-nav ul {
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    background: #0057b7;
+    padding: 0;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+  #main-nav ul li {
+    margin: 1em 0;
+    text-align: center;
+  }
+  #main-nav .menu-toggle {
+    display: block;
+    background: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+  }
+  #main-nav ul li::after{
+    display: none;
+  }
+  #main-nav ul.show {
+    max-height: 500px;
+    padding: 1em;
+    display: flex;
+  }
+  #services {
+    flex-direction: column;
+    height: auto;
+  }
+}
+#main-nav ul li:not(:last-child)::after {
+    content: "|";
+    margin-left: 1em;
+    color: rgb(247, 255, 5);
+    text-shadow: 0 0 5px rgb(247, 255, 5);
+  }
+
+#main-nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+#main-nav ul li a:active {
+  color: #ffcc00;
+  font-weight: bold;
+  border-bottom: 2px solid #ffcc00;
+}
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+aside a {
+  font-size: 30px;
+  margin-right: 10px;
+  text-align: center;
+}

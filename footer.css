@@ -1,0 +1,35 @@
+footer {
+  text-align: center;
+  padding: 2em;
+  background-color: #333;
+  color: white;
+}
+#footer-links ul {
+  list-style: none;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+#footer-links li {
+  display: block;
+  padding: 10px 1em;
+}
+#footer-links a {
+  text-decoration: none;
+  color: #c8c8c8;
+  transition: color 0.3s ease;
+}
+#footer-links a:hover {
+  color: #ff5e00;
+}
+a {
+  text-decoration: none;
+  color: #002fff;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #ff5e00;
+}
+a:active {
+  text-decoration: underline;
+}
