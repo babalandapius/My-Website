@@ -113,12 +113,12 @@ services.forEach(service => observer.observe(service));
 
 //Slider for an Image
 const myImages = [
-  'images/maxresdefault.jpg',
-  'images/Busia-SS-classroom-after.jpg',
-  'images/maxresdefault.jpg',
-  'images/Busia-SS-classroom-after.jpg',
-  'images/maxresdefault.jpg',
-  'images/Busia-SS-classroom-after.jpg'
+  'maxresdefault.jpg',
+  'Busia-SS-classroom-after.jpg',
+  'maxresdefault.jpg',
+  'Busia-SS-classroom-after.jpg',
+  'maxresdefault.jpg',
+  'Busia-SS-classroom-after.jpg'
 ];
 let currentIndex = 0;
 const slideRow = document.getElementById('slider-row');
@@ -213,6 +213,7 @@ newsData.forEach(item => {
   `
   newsGrid.appendChild(card);
 });
+
 
 
 
