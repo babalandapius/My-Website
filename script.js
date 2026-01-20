@@ -197,8 +197,8 @@ function handelSwipe() {
 
 //news section javaScript
 const newsData = [
-  {title: "Inter-house Debate", img: "images/event1.jpg", desc: "Debating Skills...", link: "#"},
-  {title: "Annual Sports Day", img: "images/event1.jpg", desc: "Team work and Spirit...", link: "#"},
+  {title: "Inter-house Debate", img: "event1.jpg", desc: "Debating Skills...", link: "#"},
+  {title: "Annual Sports Day", img: "event1.jpg", desc: "Team work and Spirit...", link: "#"},
 ];
 
 const newsGrid = document.querySelectorAll('.news-grid');
@@ -213,6 +213,7 @@ newsData.forEach(item => {
   `
   newsGrid.appendChild(card);
 });
+
 
 
 
